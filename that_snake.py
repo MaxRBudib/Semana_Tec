@@ -21,6 +21,8 @@ def inside(head):
     "Return True if head inside boundaries."
     return -200 < head.x < 190 and -200 < head.y < 190
 
+
+
 def move():
     "Move snake forward one segment."
     head = snake[-1].copy()
@@ -35,8 +37,8 @@ def move():
 
     if head == food:
         print('Snake:', len(snake))
-        food.x = randrange(-15, 15) * 10
-        food.y = randrange(-15, 15) * 10
+        food.x = randrange(-19, 18) * 10
+        food.y = randrange(-19, 18) * 10
     else:
         snake.pop(0)
 
