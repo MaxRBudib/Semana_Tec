@@ -5,12 +5,37 @@ Exercises
 """
 
 from turtle import *
-from random import randrange
+from random import randrange, randint
 from freegames import square, vector
 
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
+numero = randint(1,5)
+
+def color(numero):
+    if numero ==1:
+        return "green"
+    if numero ==2:
+        return "blue"
+    if numero ==3:
+        return "purple"
+    if numero ==4:
+        return "black"
+    if numero ==5:
+        return "pink"
+
+def color2(numero):
+    if numero ==1:
+        return "blue"
+    if numero ==2:
+        return "purple"
+    if numero ==3:
+        return "black"
+    if numero ==4:
+        return "pink"
+    if numero ==5:
+        return "green"
 
 def change(x, y):
     "Change snake direction."
@@ -43,9 +68,9 @@ def move():
     clear()
 
     for body in snake:
-        square(body.x, body.y, 9, 'black')
+        square(body.x, body.y, 9, color(numero))
 
-    square(food.x, food.y, 9, 'green')
+    square(food.x, food.y, 9, color2(numero))
     update()
     ontimer(move, 100)
 
